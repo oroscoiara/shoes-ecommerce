@@ -8,7 +8,7 @@ export const NavBar = () => {
     return(
         
         <div className='containerNav'>
-        <h1>ShowShoe</h1>
+        <h1 className='mainName'>OhMyShoes</h1>
         <ul className='nav'>
             <li><a href= '#'>Home </a></li>
             <li><a href= '#'>Productos </a>
