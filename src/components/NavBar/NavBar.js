@@ -1,22 +1,18 @@
 import React from 'react';
 import '../NavBar/NavBar.css';
-
-
+import { NavDropdown } from 'react-bootstrap'
 import CartWidget from '../CartWidget/CartWidget';
+import ItemLink from '../ItemLink/ItemLink';
 
 export const NavBar = () => {
+ 
     return(
         
         <div className='containerNav'>
         <h1 className='mainName'>OhMyShoes</h1>
         <ul className='nav'>
-            <li><a href= '#'>Home </a></li>
-            <li><a href= '#'>Productos </a>
-         
-
-            </li>
-            <li><a href= '#'>Contacto</a></li>
-            <li><a href= '#'>Cómo comprar </a></li>
+           
+            <ItemLink />
             <li><CartWidget /></li>
         </ul>
         
