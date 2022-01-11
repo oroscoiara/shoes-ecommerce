@@ -2,6 +2,7 @@ import React from 'react';
 import '../NavBar/NavBar.css';
 import { NavDropdown } from 'react-bootstrap'
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
 import ItemLink from '../ItemLink/ItemLink';
 
 export const NavBar = () => {

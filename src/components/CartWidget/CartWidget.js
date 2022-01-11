@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
-function CartWidget() {
-    return(
-    
-        <a href= '#'>
-        <FontAwesomeIcon icon={faShoppingCart} />  
-        </a>
+const CartWidget = () => (
+    <>
+      <FontAwesomeIcon icon={faShoppingCart} />  
+    </>
 
     );
-}
+
 
 export default CartWidget;

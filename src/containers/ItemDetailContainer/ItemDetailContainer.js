@@ -4,7 +4,7 @@ import MockedItems from '../../components/Mock/MockedItems';
 import { useParams } from 'react-router';
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (() => {
     console.log(MockedItems);
     const [product, setProduct] = useState({})
 
@@ -25,9 +25,11 @@ const ItemDetailContainer = () => {
 
             .finally(() => setLoading(false))
         }, [itemId]);
+
+        console.log(product)
         
-        return loading ? <h2> Cargando..</h2> : <ItemDetail {...product} />
+        return loading ? <h2> Cargando..</h2> : <ItemDetail item={product} />
     
-}
+})
 
 export default ItemDetailContainer;

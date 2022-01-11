@@ -22,7 +22,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         //promesa que en resolve tira el array de prod
         setLoading(true)
-        const itemPromise = new Promise((res, rej) => {
+        const itemPromise = new Promise((res) => {
             setTimeout(()=> {
                 let myData = catId ? MockedItems.filter((item) => item.category === catId) : MockedItems;
 
@@ -36,8 +36,7 @@ const ItemListContainer = () => {
         .finally(()=> setLoading(false))
     }, [catId]); //acá el efecto estará escuchando el cambio de estado. Sólo rerenderiza si se modif items.
     return (
-        loading ? <h2>Cargando...</h2> : <ItemList  items={items} />)//este item list tendrá un valor, que será items.
-    
-};
+        loading ? (<h2>Cargando...</h2>) : <div><ItemList  items={items} /> </div>);//este item list tendrá un valor, que será items.
 
+}
 export default ItemListContainer;

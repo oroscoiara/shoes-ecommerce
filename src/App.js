@@ -3,7 +3,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import CategorySelector from './containers/CategorySelector';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Item from './components/Item/item';
 
 

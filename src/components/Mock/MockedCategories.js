@@ -1,3 +1,5 @@
+import React from 'react';
+
 const MockedCategories = [
     {
         id: 1,
