@@ -1,55 +1,37 @@
 import './App.css';
-import { NavBar } from './components/NavBar/NavBar';
-import ItemListContainer from './containers/ItemListContainer';
+import  NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
-import CategorySelector from './containers/CategorySelector';
+import CategoryListContainer from './containers/CategoryListContainer/CategoryListContainer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Item from './components/Item/item';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
 function App(){
   return(
+    <div className="App">
     <BrowserRouter>
       <NavBar />
     <Switch>
       <Route exact path="/">
-      <ItemListContainer />
+        <ItemListContainer />
       </Route>
-     
-            <Route path = "/products" >
-              <ItemListContainer/>
-            </Route>
-            <Route path="products/:catId" >
-              <CategorySelector/>
-            </Route>
-            <Route path= "product/:itemId">
-              <ItemDetailContainer/>
-            </Route>
-            <Route path="/contacto">
-                <h1>Contacto</h1>
-            </Route>
-            <Route path="/comocomprar">
-                <h1>Como Comprar?</h1>
-            </Route>
+      <Route exact path="/categorias">
+        <CategoryListContainer />
+      </Route>
+      <Route exact path="/categorias/:catId">
+        <ItemListContainer/>
+      </Route>       
+      <Route exact path="/items/:itemId">
+        <ItemDetailContainer />
+      </Route>
+
     </Switch>
     </BrowserRouter>
+    </div>
   );
 }
 
-export default App;
-/* export default function App() {
-    return(
-      <BrowserRouter>
-        <NavBar />
-      
-              <ItemListContainer />
-
-      </BrowserRouter>
-       <Route path="/products">
-        <div><h2>Filtrar</h2>
-        <CategorySelector />
-          </div>
-
-  );
-} */
+export default App

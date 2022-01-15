@@ -1,27 +1,26 @@
 import React from 'react';
-import Row from 'react-bootstrap/esm/Row'
-import Col from 'react-bootstrap/esm/Col'
-import { Container } from 'react-bootstrap';
-import { Image } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = (( {item}) => {
 
     return (
 
         <Container className='mt-4 mb-4'>
             <Row>
                 <Col xs lg='4'>
-                    <Image src={item.pictureURL} fluid />
+                    <Image src={item.pictureURL} fluid/>
                 </Col>
-                <Col xs lg='g'>
+                <Col xs lg='6'>
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
-                    <p>{item.price}</p>
+                    <p>$ {item.price}</p>
+                    <p>{item.category}</p>
                 </Col>
             </Row>
             
         </Container>
     );
-}
+})
 
-export default ItemDetail
+export default ItemDetail;

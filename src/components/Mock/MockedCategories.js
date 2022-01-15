@@ -1,24 +1,19 @@
-import React from 'react';
-
 const MockedCategories = [
     {
-        id: 1,
-        type: "all",
+        id: "1",
         title: "Ver todo",
-        address: "/products/all"
+        pictureURL: "/media/sandalias.jpgn"
     },
     {
-        id: 2,
-        type: "summer 2022",
+        id: "2",
         title: "Summer 2022",
-        address: "/products/summer22"
+        pictureURL: "/media/sandalias.jpgn"
     },
     {
-        id: 3,
-        type: "sale",
+        id: "3",
         title: "Sale",
-        address: "products/sale"
-    }
+        pictureURL: "/media/sandalias.jpgn"
+    },
 ]
 
 export default MockedCategories

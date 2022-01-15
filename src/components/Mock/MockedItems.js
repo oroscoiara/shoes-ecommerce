@@ -1,40 +1,68 @@
+
 const MockedItems = [
     {
-        id: 1,
-        title: "Sandalias Zendaya",
-        category: 'summer22',
-        categoryId: '2',
-        description: "Sandalias de cuero con plataforma de 5 cm",
+        id: "1",
+        title: 'Sandalias Zendaya',
+        category: 'Summer 2022',
+        categoryId: "2",
+        description: 'Sandalias de cuero con plataforma de 5 cm',
         price: 3800,
-        pictureURL: <img src="https://i.imgur.com/052UrbP.jpg" title="source: imgur.com" width = '300px' height= '300px'/>
-    },
+        pictureURL: '/media/sandalias.jpeg'
+    }, 
     {
-        id: 2,
-        title: "Tacos Rihanna",
-        category: 'sale',
-        categoryId: '3',
-        description: "Taco abierto. Diferentes colores.",
+        id: "2",
+        title: 'Tacos Rihanna',
+        category: 'Sale',
+        categoryId: "3",
+        description: 'Taco abierto. Diferentes colores.',
         price: 5500,
-        pictureURL: <img src="https://i.imgur.com/540eEmU.jpg" title="source: imgur.com" width = '300px' height= '300px'/>
+        pictureURL: '/media/taco-negro.jpeg'
     },
     {
-        id: 3,
-        title: "Zapatillas Britney",
-        category: 'sale',
-        categoryId: '3',
-        description: "Zapatillas Britney con cordones flúor y plataforma de 3 cm.",
+        id: "3",
+        title: 'Zapatillas Britney',
+        category: 'Sale',
+        categoryId: "3",
+        description: 'Zapatillas Britney con cordones flúor y plataforma de 3 cm.',
         price: 3500,
-        pictureURL: <img src="https://i.imgur.com/DRma8Kf.jpg" title="source: imgur.com" width = '300px' height= '300px'/>
+        pictureURL: '/media/zapatillas-fluor.jpeg'
     },    
     {
-        id: 4,
-        title: "Sandalias Summer",
-        category: 'summer22',
-        categoryId: '2',
-        description: "Sandalias bordadas de ecocuero.",
+        id: "4",
+        title: 'Sandalias Summer"',
+        category: 'Summer 2022',
+        categoryId: "2",
+        description: 'Sandalias bordadas de ecocuero.',
         price: 6000,
-        pictureURL: <img src="https://i.imgur.com/rXqEx5Y.jpg" title="source: imgur.com" width = '300px' height= '300px'/>
+        pictureURL: '/media/sandalia-baja.jpeg'
     },  
+    {
+        id: "5",
+        title: 'Modelo Becky"',
+        category: 'Summer 2022',
+        categoryId: "2",
+        description: 'Sandalias con plataforma y tiras cruzadas.',
+        price: 5200,
+        pictureURL: '/media/sandalias.jpeg'
+    },  
+    {
+        id: "6",
+        title: 'Zapatillas Autumn',
+        category: 'Sale',
+        categoryId: "3",
+        description: 'Zapatillas bajas con detalles en plateado.',
+        price: 3000,
+        pictureURL: '/media/zapatillas-fluor.jpeg'
+      },  
+    {
+        id: "7",
+        title: 'Tacos Magnolia',
+        category: 'Summer 2022',
+        categoryId: "2",
+        description: 'Taco estilo chino',
+        price: 6500,
+        pictureURL: '/media/taco-negro.jpeg'},  
 ];
 
 export default MockedItems;
+
