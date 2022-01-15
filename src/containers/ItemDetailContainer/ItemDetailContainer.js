@@ -6,10 +6,10 @@ import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
+    const [loading, setLoading] = useState(true);
     const [product, setProduct] = useState({});
-    const [loading, setLoading] = useEffect(true);
     
-    const itemId  = useParams();
+    const {itemId}  = useParams();
     console.log(itemId);
 
     useEffect(() => {
@@ -30,8 +30,9 @@ const ItemDetailContainer = () => {
 
         console.log(product);
         
-        return (<ItemDetail item={product} />);
-    
-};
+        return loading ? 
+            
+             <h1> Cargando... </h1>  : <ItemDetail item={product} />;
+    };
 
 export default ItemDetailContainer;

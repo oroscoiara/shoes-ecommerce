@@ -5,12 +5,12 @@ import '../ItemList/styles.css';
 import Row from 'react-bootstrap/esm/Row'
 
 //le mando props, recibe props items entre los ({})
+//recibe los items de afuera
 
-
-const ItemList = ({items}) => { //recibe los items de afuera
+const ItemList = ({items}) => { 
     return (
         <>
-        <Row md={4} className='g-4 mt-2 mb-4'>
+        <Row md={6}>
             {items.map((item) =>  {
                 return <Item key={item.id} item={item} />
             })}
