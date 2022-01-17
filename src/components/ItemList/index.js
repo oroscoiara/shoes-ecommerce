@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/esm/Row'
 const ItemList = ({items}) => { 
     return (
         <>
-        <Row md={6}>
+        <Row md={4}>
             {items.map((item) =>  {
                 return <Item key={item.id} item={item} />
             })}

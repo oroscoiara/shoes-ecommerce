@@ -4,15 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.containerNav{
-    justify-content: space-between;
-    width: 100%;
-    background-color: black;
-    font-style: normal;
-    display: flex;
-    position: sticky;
-    top: 50px;
-}
+
 
 h1{
     color: white;
@@ -21,49 +13,12 @@ h1{
     display: flex;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-ul, li {
-    list-style: none;
+
+.navbar-light .navbar-nav .nav-link .navbar-expand .navbar-nav .nav-link{
+    color: white
 }
 
-.nav{
-    justify-content: space-between;
-    width: 100%;
-    background-color: black(255, 243, 68);
-    font-style: normal;
-    display:flex;
-    position: sticky;
-    top: 0px;
-
-    align-items: center;
-    padding: 1rem;
-}
-.nav > li {
-    float: left;
+.navbar-nav .nav-link {
+    color: white
 }
 
-.nav li a {
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    padding: 10px 10px;
-    display: block;
-}
-
-nav li:hover > ul { 
-    display: block;
-}
-
-.nav li ul {
-    display: none;
-    position: absolute;
-    min-width: 150px;
-}
-
-.nav li ul li {
-    position: relative;
-}
-
-.nav li ul li ul {
-    right: -150px;
-    top: 0px;
-}

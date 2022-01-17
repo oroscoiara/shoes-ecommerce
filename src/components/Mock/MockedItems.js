@@ -29,7 +29,7 @@ const MockedItems = [
     },    
     {
         id: "4",
-        title: 'Sandalias Summer"',
+        title: 'Sandalias Summer',
         category: 'Summer 2022',
         categoryId: "2",
         description: 'Sandalias bordadas de ecocuero.',

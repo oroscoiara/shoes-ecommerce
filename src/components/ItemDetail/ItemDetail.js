@@ -8,11 +8,11 @@ const ItemDetail = (( {item}) => {
 
         <Container className='mt-4 mb-4'>
             <Row>
-                <Col xs lg='4'>
-                    <Image src={item.pictureURL} fluid/>
+                <Col xs lg='6'>
+                    <Image src={item.pictureURL} width="400px" height="300" border= "5px solid transparent"/>
                 </Col>
                 <Col xs lg='6'>
-                    <h1>{item.title}</h1>
+                    <h3>{item.title}</h3>
                     <p>{item.description}</p>
                     <p>$ {item.price}</p>
                     <p>{item.category}</p>
