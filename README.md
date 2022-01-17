@@ -6,12 +6,23 @@ OhMyShoes es un tienda ficticia creada para zapaterías:
 * Filtro por categorías.
 * Clickeando el producto, se abre el detalle del mismo.
 
-Tecnologías utilizadas: 
+herramientas y tecnologías utilizadas: 
 * HTML, CSS y React.js
 * Diseño Responsive.
 * React-router-dom 
 * Bootstrap
 
+# Instalación:
+1) Clona el repositorio
+2) Desde la raíz del proyecto, corré el comando
+```
+npm install
+```
+3) Para iniciarlo, utilizá el comando
+````
+npm start
+````
+El proyecto estará disponible en https://localhost:3000
 ------------------------------------------------
 #Getting Started with Create React App
 
