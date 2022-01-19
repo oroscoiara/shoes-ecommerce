@@ -15,10 +15,11 @@ h1{
 }
 
 .navbar-light .navbar-nav .nav-link .navbar-expand .navbar-nav .nav-link{
-    color: white
-}
+    color: white !important;} 
 
 .navbar-nav .nav-link {
-    color: white
+    color: white !important;
 }
+
+
 
