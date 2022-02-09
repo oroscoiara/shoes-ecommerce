@@ -1,23 +1,48 @@
 import React from 'react';
+import { useState } from 'react';
 import {useCartContext} from '../../context/CartContext';
 import ItemCart from '../ItemCart/ItemCart';
 import { NavLink } from 'react-router-dom';
-import { Row, Button, Container, Card, Col } from 'react-bootstrap';
+import { Row, Button, Container, Col, Table, Modal, ButtonGroup } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBan, faShoppingBasket, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import PaymentForm from '../PaymentForm/PaymentForm'
 
 const Cart = () => {
     const {cart, clearCart, cartWidgetItems, totalPrice} = useCartContext();
+
     const total = totalPrice();
+    const [show, setShow]= useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
 
     return(
-        <>
+    <>
             <Container className="mt-4 mb-4">
+                <Row className="justify-content-md-center my-4">
+                    <Col xs lg="6" className="text-center mb-4">
                 {cartWidgetItems() > 0 ? (
-                    cart.map((i) => (
-                        <>
-                        
-                        <ItemCart key= {i.item.id} id={i.item.id} name = {i.item.title} price={i.item.price} quantity={i.quantity}/>
-                        </>
-                    ))
+                    
+                        <Table striped bordered hover size= 'sm'>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {cart.map((i) => (
+                                    <>
+                                 <ItemCart key= {i.item.id} id={i.item.id} name = {i.item.title} price={i.item.price} quantity={i.quantity}/>
+                                    </>
+                                ))}
+                                </tbody>
+                        </Table>
+                    
                 ) : (
                     <>
                     <Row className="justify-content-md-center my-4">
@@ -32,12 +57,38 @@ const Cart = () => {
                     <>
 
                     <h4>Total: $ {total} </h4>
-                    <Button as={NavLink} exact to='/'>Ver más productos</Button>
+                    <ButtonGroup className='mt-3' horizontal>
+                        <div>
+                            <Button className='mb-1' onClick={handleShow} variant="dark">
+                                <FontAwesomeIcon icon={faShoppingBasket}/> Finalizar compra
+                            </Button>
+                        </div>
+                        <div>
+                            <Button className='mb-1' as={NavLink} exact to= "/" variant="dark">
+                                <FontAwesomeIcon icon={faPlusCircle} />  Ver más productos
+                            </Button>
+                        </div>    
+                        <div>    
+                            <Button className='mb-1' onClick={clearCart} variant="dark">
+                                <FontAwesomeIcon icon={faBan} /> Limpiar carrito
+                            </Button>
+                        </div>
+                    </ButtonGroup>
+                    
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Por favor, complete sus datos para continuar con la compra.</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <PaymentForm cart={cart} total={total} clearCart={clearCart} />
+                        </Modal.Body>
+                    </Modal>
 
-                    <Button onClick={clearCart}>Limpiar carrito</Button>
                     </>
-                    )}
-            </Container>
+                )}
+                </Col>
+                </Row>
+                </Container>
         </>
     )
 }

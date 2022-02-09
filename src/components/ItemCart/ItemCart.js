@@ -12,7 +12,7 @@ const ItemCart = ({name, price, pictureURL, id, quantity}) => {
             <Col xs lg="6">
                 <h2> {name}</h2>
                 <h2>Precio: ${price}</h2>
-                <img src={pictureURL  } />
+            
                 <h2>Cantidad: {quantity}</h2>
             </Col>
             <Col xs lg="2">

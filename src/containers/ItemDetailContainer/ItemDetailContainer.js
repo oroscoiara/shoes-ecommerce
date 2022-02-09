@@ -3,6 +3,9 @@ import {useState, useEffect} from 'react';
 import MockedItems from '../../components/Mock/MockedItems';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import { getFirestore } from '../../components/Firebase/firebase';
+import Loader from '../../components/Loader/Loader';
+
 
 const ItemDetailContainer = () => {
 
@@ -13,8 +16,19 @@ const ItemDetailContainer = () => {
     console.log(itemId);
 
     useEffect(() => {
+        setLoading(false);
+        const bd = getFirestore();
+        const itemsCollection = bd.collection('items');
+        itemsCollection.get().then((value) => {
+            let datos = value.docs.map((e) => {
+                return {...e.data(), id: e.id};
+         });
+         const found = datos.find((item) => item.id === itemId)
+         setProduct(found);
+        })
+    }, [itemId])
         
-        const itemPromise = new Promise((res) => {
+        /*const itemPromise = new Promise((res) => {
             setTimeout(() => {
                 const myData = MockedItems.find( (item) => item.id === itemId);
                 res(myData);
@@ -29,10 +43,11 @@ const ItemDetailContainer = () => {
         }, [itemId]);
 
         console.log(product);
+        */
         
         return loading ? 
             
-             <h1> Cargando... </h1>  : <ItemDetail item={product} />;
+             <Loader />  : <ItemDetail item={product} />;
     };
 
 export default ItemDetailContainer;

@@ -4,9 +4,11 @@ const CartContext = createContext();
 
 export const useCartContext = () => useContext(CartContext);
 
+//en el provider puedo crear funciones, se suscriben y de ahì toman todo lo que necesito acceder
+
 export const CartContextProvider = ({children}) => {
     let variable = "context";
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([]); //creo estado para que lo puedan acceder, use state con array
 
 
     const addItem = (item, quantity) => {
@@ -42,9 +44,10 @@ export const CartContextProvider = ({children}) => {
 
         };
      return(
-
+//con esto suscribo a los componentes
+//envuelvo y uso prop Children p que puedan usarla, en la linea 9 tmb.
         <CartContext.Provider
-            value = {{
+            value = {{ //doble llave, lo que tiene dentro, es objeto. Estos values los tengo por ej llamados en CartWidget
             variable,
             cart,
             setCart,

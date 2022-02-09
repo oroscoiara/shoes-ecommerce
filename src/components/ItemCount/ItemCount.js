@@ -26,13 +26,13 @@ const ItemCount = ({stock, onAdd}) => {
 
         <>
         <ButtonGroup>
-            <Button onClick={handleClickRemove} variant="primary">-</Button>
-            <Button disabled variant="primary">{count}</Button>
-            <Button onClick={handleClickAdd} variant="primary">+</Button>
+            <Button onClick={handleClickRemove} variant="dark">-</Button>
+            <Button disabled variant="dark">{count}</Button>
+            <Button onClick={handleClickAdd} variant="dark">+</Button>
         </ButtonGroup>
         <br></br>
 
-        <Button onClick={handleOnAdd} variant="primary"> Agregar al carrito! </Button>
+        <Button onClick={handleOnAdd} variant="dark"> Agregar al carrito! </Button>
     </>
        )
 

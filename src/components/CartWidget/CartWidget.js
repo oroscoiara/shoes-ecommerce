@@ -8,7 +8,7 @@ import { Badge } from 'react-bootstrap';
 
 const CartWidget = () => {
     
-    const {cartWidgetItems} = useCartContext();
+    const {cartWidgetItems} = useCartContext();  //me trae los values que tengo en el context
     return(
       <>
 

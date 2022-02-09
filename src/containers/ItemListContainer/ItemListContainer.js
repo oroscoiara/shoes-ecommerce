@@ -8,7 +8,8 @@ import ItemList from "../../components/ItemList/index"
 import "../ItemListContainer/styles.css";
 import { useParams } from 'react-router-dom';
 import { Row, Col, Container } from "react-bootstrap";
-
+import { getFirestore } from "../../components/Firebase/firebase";
+import Loader from "../../components/Loader/Loader";
 
 const ItemListContainer = () => {
 
@@ -21,7 +22,22 @@ const ItemListContainer = () => {
     const { catId } = useParams();
     
     useEffect(() => {
-        //promesa que en resolve tira el array de prod
+
+        const bd = getFirestore();
+        const itemsCollection = bd.collection('items');
+        itemsCollection.get().then((value) => {
+            let datos = value.docs.map((e) => {
+                return {...e.data(),id: e.id};
+            });
+            const datosFiltrados = catId 
+            ? datos.filter ((item) => item.categoryId === catId)
+            : datos;
+            setItems(datosFiltrados);
+        });
+        setLoading(false);
+    },[catId]);
+
+        /*promesa que en resolve tira el array de prod
         setLoading(true)
         const itemPromise = new Promise((res, rej) => {
             setTimeout(()=> {
@@ -35,9 +51,12 @@ const ItemListContainer = () => {
             setItems(res)})
         .finally(()=> setLoading(false));
     }, [catId]); //acá el efecto estará escuchando el cambio de estado. Sólo rerenderiza si se modif items.
-    return (
-        
-        loading ? <h2>Cargando...</h2> : (
+    */
+
+    
+    
+    return loading ? (
+        <Loader/> ) : (
         <Container>
             <Row>
                 <Col md="auto">
@@ -45,6 +64,6 @@ const ItemListContainer = () => {
                 </Col>
             </Row>
         </Container>
-       ) ) 
+       ) 
 }
 export default ItemListContainer;
