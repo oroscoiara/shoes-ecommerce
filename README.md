@@ -3,7 +3,7 @@
 - OhMyShoes es un tienda ficticia creada para zapaterías en el marco de un curso de ReactJS en Coderhouse (Enero 2022).
 - Para crear la aplicación se utilizó **[Create React App](http://https://github.com/facebook/create-react-app "Create React App")**.
 
-![](https://i.imgur.com/7Eb2ebS.png)
+![](https://i.imgur.com/kL3eVuc.gif)
 
 ### Herramientas utilizadas:
 

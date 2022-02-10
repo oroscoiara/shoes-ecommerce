@@ -3,13 +3,12 @@
 //acá traemos un ItemList que va a mapear Items y devolverlos como lista
 //en el return
 import { useEffect, useState } from "react";
-import MockedItems from "../../components/Mock/MockedItems";
 import ItemList from "../../components/ItemList/index"
-import "../ItemListContainer/styles.css";
 import { useParams } from 'react-router-dom';
 import { Row, Col, Container } from "react-bootstrap";
 import { getFirestore } from "../../components/Firebase/firebase";
-import Loader from "../../components/Loader/Loader";
+import Loader from '../../components/Loader/Loader';
+
 
 const ItemListContainer = () => {
 
@@ -55,8 +54,9 @@ const ItemListContainer = () => {
 
     
     
-    return loading ? (
-        <Loader/> ) : (
+    return (
+        
+        loading ? (<Loader/> ) : (
         <Container>
             <Row>
                 <Col md="auto">
@@ -64,6 +64,6 @@ const ItemListContainer = () => {
                 </Col>
             </Row>
         </Container>
-       ) 
+       ) ) 
 }
 export default ItemListContainer;

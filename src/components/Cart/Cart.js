@@ -7,7 +7,7 @@ import { Row, Button, Container, Col, Table, Modal, ButtonGroup } from 'react-bo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faShoppingBasket, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
 import PaymentForm from '../PaymentForm/PaymentForm'
-
+import './cart.css'
 const Cart = () => {
     const {cart, clearCart, cartWidgetItems, totalPrice} = useCartContext();
 
@@ -20,12 +20,13 @@ const Cart = () => {
 
     return(
     <>
+            <h1 className="justify-content-center" fontStyle="italic" color="black">Checkout</h1>
             <Container className="mt-4 mb-4">
                 <Row className="justify-content-md-center my-4">
                     <Col xs lg="6" className="text-center mb-4">
                 {cartWidgetItems() > 0 ? (
                     
-                        <Table striped bordered hover size= 'sm'>
+                        <Table striped bordered>
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -35,11 +36,16 @@ const Cart = () => {
                                 </tr>
                             </thead>
                             <tbody>
+                            
                                 {cart.map((i) => (
+                        
                                     <>
+                                  
                                  <ItemCart key= {i.item.id} id={i.item.id} name = {i.item.title} price={i.item.price} quantity={i.quantity}/>
-                                    </>
+                                
+                                </>
                                 ))}
+                                 
                                 </tbody>
                         </Table>
                     
@@ -55,8 +61,8 @@ const Cart = () => {
 
                 {cartWidgetItems()>0 && (
                     <>
-
-                    <h4>Total: $ {total} </h4>
+                    
+                    <div className="justify-content-md-right my-4">Total: $ {total} </div>
                     <ButtonGroup className='mt-3' horizontal>
                         <div>
                             <Button className='mb-1' onClick={handleShow} variant="dark">

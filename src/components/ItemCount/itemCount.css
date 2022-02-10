@@ -1,0 +1,7 @@
+.itemCount{
+    text-align: center;
+}
+
+.btnAddRemove:hover{
+    cursor:pointer
+}

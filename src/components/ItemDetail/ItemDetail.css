@@ -1,11 +1,8 @@
-*{
-    text-align: justify;
-    color: black;
-}
 
-h3{
-    text-decoration: gray;
-    text-shadow: black;
-    margin-top: 60px !important;
-}
 
+ .pictureItemDetail{
+     height: 50vh;
+     object-fit: scale-down;
+    margin-top: 0%;
+
+ }

@@ -1,17 +1,9 @@
 import { Spinner} from "react-bootstrap";
-import { Row, Container } from "react-bootstrap";
 
 
-const Loader = () => {
+export default function Loader ({padTop}) {
     return (
-        <Container>
-        <Row className="jutify-content-center mt-4 mb-4">
+        <div style={{paddingTop: padTop ? "35vh":"1vh"}}>
             <Spinner animation="border" variant="secondary" />
-            <h2 className="text-center">Cargando...</h2>
-        </Row>
-        </Container>
-    )
-}
-
-
-export default Loader
+        </div>
+    )}

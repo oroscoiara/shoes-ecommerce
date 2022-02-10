@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container, Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/esm/Button';
 import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
-
+import './itemCount.css'
 const ItemCount = ({stock, onAdd}) => {
     const initial = 1;
     const [count, setCount] = useState(initial);
@@ -23,7 +23,6 @@ const ItemCount = ({stock, onAdd}) => {
     
 
     return (
-
         <>
         <ButtonGroup>
             <Button onClick={handleClickRemove} variant="dark">-</Button>
@@ -37,5 +36,6 @@ const ItemCount = ({stock, onAdd}) => {
        )
 
     }
+
 
 export default ItemCount;

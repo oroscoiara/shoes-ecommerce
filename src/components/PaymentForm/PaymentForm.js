@@ -63,7 +63,7 @@ return(
         <div className="d-grid gap-2">
             {formData.email === formData.email2 ? (
                 <Button variant="dark" type="submit" size="md"> 
-                Enviar
+                Comprar
                 </Button>) : (
                 <Button variant="dark" type="submit" size="md">
                 Por favor, corriga sus datos
