@@ -1,16 +1,18 @@
-# Proyecto Final - React - Coderhouse
-# OhMyShoes - Ecommerce
+### OhMyShoes - Ecommerce
 
-OhMyShoes es un tienda ficticia creada para zapaterías:
-* Permite navegar por el catalogo de productos.
-* Filtro por categorías.
-* Clickeando el producto, se abre el detalle del mismo.
+- OhMyShoes es un tienda ficticia creada para zapaterías en el marco de un curso de ReactJS en Coderhouse (Enero 2022).
+- Para crear la aplicación se utilizó **[Create React App](http://https://github.com/facebook/create-react-app "Create React App")**.
 
-herramientas y tecnologías utilizadas: 
-* HTML, CSS y React.js
-* Diseño Responsive.
-* React-router-dom 
-* Bootstrap
+![](https://i.imgur.com/7Eb2ebS.png)
+
+### Herramientas utilizadas:
+
+- ReactJS
+- Create React App
+- Bootstrap: Para componentes UI y estilos.
+- React Router DOM: Para el ruteo de la aplicación.
+- Firebase: Consumo y  alojamiento de base de datos.
+- FontAwesome: Librería de íconos.
 
 # Instalación:
 1) Clona el repositorio
