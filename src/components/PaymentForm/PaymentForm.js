@@ -62,12 +62,11 @@ return(
             <Form.Control required name='celular' id='celular' type='text' placeholder='(011)1123343235' />
         </FloatingLabel>
         <div className="d-grid gap-2">
-            {formData.email != formData.email2 ? (
-                <Button variant="dark" type="submit" size="md"> 
+            {(formData.email != formData.email2) ? (
+                alert(' Por favor, corriga sus datos, los email deben coincidir')) 
+                 : (
+                <Button variant="dark" type="submit" size="md">
                 Comprar
-                </Button>) : (
-                <Button variant="dark" type="reset" size="md">
-                Por favor, corriga sus datos, los email deben coincidir.
                 </Button>
                 )}
             </div>
