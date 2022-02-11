@@ -1,22 +1,21 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import MockedItems from '../../components/Mock/MockedItems';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import { getFirestore } from '../../components/Firebase/firebase';
 import Loader from '../../components/Loader/Loader';
-
+//trae mediante Paramas el id del producto que el usuario consulta. Lo busca en Firebase y lo trae a ItemDetail
 
 const ItemDetailContainer = () => {
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [product, setProduct] = useState({});
     
     const {itemId}  = useParams();
     console.log(itemId);
 
     useEffect(() => {
-        setLoading(false);
+        setLoading(true);
         const bd = getFirestore();
         const itemsCollection = bd.collection('items');
         itemsCollection.get().then((value) => {
@@ -25,8 +24,19 @@ const ItemDetailContainer = () => {
          });
          const found = datos.find((item) => item.id === itemId)
          setProduct(found);
-        })
-    }, [itemId])
+        }).finally(() => {
+        setLoading(false)
+    })
+    }, [itemId]);
+
+    return  (loading ? (<Loader padTop={true} /> ) : (
+             <ItemDetail item={product} />
+        
+         
+    ));
+    }
+export default ItemDetailContainer;
+
         
         /*const itemPromise = new Promise((res) => {
             setTimeout(() => {
@@ -45,9 +55,3 @@ const ItemDetailContainer = () => {
         console.log(product);
         */
         
-        return loading ? 
-            
-             <Loader />  : <ItemDetail item={product} />;
-    };
-
-export default ItemDetailContainer;

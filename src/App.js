@@ -15,8 +15,9 @@ function App(){
     <div className="App">
     <CartContextProvider>
     <BrowserRouter>
-      <NavBar />
-    <Switch>
+      <NavBar/>
+    <div className="main">
+      <Switch>
       <Route exact path="/">
         <ItemListContainer />
       </Route>
@@ -30,9 +31,8 @@ function App(){
       <Route path="/cart">
         <Cart/>
       </Route>
-
-
     </Switch>
+    </div>
     </BrowserRouter>
     </CartContextProvider>
     </div>

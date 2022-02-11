@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavLink, Link} from 'react-router-dom';
-import { Card, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 import './item.css'
-//acá va la card del producto
+//Card del producto, recibe el objeto mediante props y muestra los datos en la tarjeta.
 
 const Item = ({item}) => {
     return (

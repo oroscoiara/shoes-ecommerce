@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container, Card, Row, Col} from 'react-bootstrap';
-import Image from 'react-bootstrap/Image';
+import { Container, Card} from 'react-bootstrap';
 import ItemCount from '../ItemCount/ItemCount';
-import { Link } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
 import'./ItemDetail.css';
 import Cart from '../Cart/Cart';
 
+//Tarjeta del item, renderizada por ItemDetailContainer.
+//Recibe la información por pros, renderiza ItemCount.
+//Si agregamos un producto, se agrega al CartContext -> el item recibe se recibe del itemDetailContainer y la cantidad, del ItemCount
 const ItemDetail = (( {item}) => {
 
 

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { getFirestore } from '../Firebase/firebase';
 import { Form, FloatingLabel, Button } from 'react-bootstrap';
 
+//formulario de confirmación de compra. Recibe la info del comprador y los almacena en Firebase.
 const initialState = {
     name:"",
     phone:"",
@@ -58,15 +59,15 @@ return(
             <Form.Control required name='email2' id='email2' type='email' placeholder='name@gmail.com' />
         </FloatingLabel>
         <FloatingLabel controlId="floatingInput" label="Celular" className="mb-3">
-            <Form.Control required name='calular' id='celular' type='text' placeholder='(011)1123343235' />
+            <Form.Control required name='celular' id='celular' type='text' placeholder='(011)1123343235' />
         </FloatingLabel>
         <div className="d-grid gap-2">
-            {formData.email === formData.email2 ? (
+            {formData.email != formData.email2 ? (
                 <Button variant="dark" type="submit" size="md"> 
                 Comprar
                 </Button>) : (
-                <Button variant="dark" type="submit" size="md">
-                Por favor, corriga sus datos
+                <Button variant="dark" type="reset" size="md">
+                Por favor, corriga sus datos, los email deben coincidir.
                 </Button>
                 )}
             </div>

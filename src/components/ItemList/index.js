@@ -5,7 +5,8 @@ import '../ItemList/styles.css';
 import Row from 'react-bootstrap/esm/Row'
 
 //le mando props, recibe props items entre los ({})
-//recibe los items de afuera
+//recibe los items del ItemListContainer y realizar el mapeo. 
+//Alimenta a Item con la info de cada producto para renderizar las cards.
 
 const ItemList = ({items}) => { 
     return (

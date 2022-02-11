@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faShoppingBasket, faPlusCircle} from '@fortawesome/free-solid-svg-icons'
 import PaymentForm from '../PaymentForm/PaymentForm'
 import './cart.css'
+
+//muestra resumen de la compra, permite eliminar items, agregar más o vaciar todo el carrito.
+
 const Cart = () => {
     const {cart, clearCart, cartWidgetItems, totalPrice} = useCartContext();
 

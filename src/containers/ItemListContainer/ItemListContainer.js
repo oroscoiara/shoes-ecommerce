@@ -1,15 +1,12 @@
-//llamado a la api, o por ahora la promesa.
-//manejo de estado
-//acá traemos un ItemList que va a mapear Items y devolverlos como lista
-//en el return
 import { useEffect, useState } from "react";
 import ItemList from "../../components/ItemList/index"
 import { useParams } from 'react-router-dom';
 import { Row, Col, Container } from "react-bootstrap";
 import { getFirestore } from "../../components/Firebase/firebase";
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/Loader/Loader'
 
-
+//muestra listado de items y por categoría.
+//Busca los items a mostrar y los pasa al ItemList, que alimenta las tarjetas.
 const ItemListContainer = () => {
 
     //promesa
@@ -17,11 +14,11 @@ const ItemListContainer = () => {
     //cuando venga de api, los guardaremos en un array y seràun estado xq lo usaremos en varios lugares .
     //con props lo podemos pasar a otros lados a través de items. 
     //Ese items, será el array del MockedItems. Necesitamos el effect para que no se haga repetidas veces la promesa.
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const { catId } = useParams();
     
     useEffect(() => {
-
+        setLoading(true)
         const bd = getFirestore();
         const itemsCollection = bd.collection('items');
         itemsCollection.get().then((value) => {
@@ -32,8 +29,10 @@ const ItemListContainer = () => {
             ? datos.filter ((item) => item.categoryId === catId)
             : datos;
             setItems(datosFiltrados);
-        });
-        setLoading(false);
+        
+    }).finally(()=> {
+            setLoading(false)})
+        
     },[catId]);
 
         /*promesa que en resolve tira el array de prod

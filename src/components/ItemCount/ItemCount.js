@@ -7,7 +7,8 @@ const ItemCount = ({stock, onAdd}) => {
     const initial = 1;
     const [count, setCount] = useState(initial);
    // const [display, setDisplay] = useState('hidden');
-//initial x1?
+//Se renderiza en itemDetail. Recibe por props stock del item, valor inicial del counter y envìa la cant seleccionada a ItemDetail.
+//Permite agregar o quitar cantidades del producto. Si excede el stock, no se podrá seguir sumando del producto.
     const handleClickAdd = () => {
         count < stock ? setCount(count + 1) : setCount(count);
     }
